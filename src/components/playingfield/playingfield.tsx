@@ -2,13 +2,18 @@ import { useState, useEffect } from 'react';
 import { PlayingCard } from 'components/card/card';
 import { DifficultyPicker } from 'components/difficulty/difficulty';
 import { iconArray, arrayShuffle } from 'library/cardDetailFunctions';
+import style from './playingfield.module.css';
+
 
 
 export const PlayingField: React.FC = () => {
-	const [cardArray, setCardArray] = useState<React.ReactElement[]>([])
-	const [size, setSize] = useState(6);
+	const [cardArray, setCardArray] = useState<any[]>([])
+	const [size, setSize] = useState(2);
+	const cardHeight = `${(100/size)}%`;
+	const cardWidth = `${(90/size)}%`;
 
 	const cardArrayCreator = (number: number) => {
+		setCardArray([])
 		const assshitholefuck = ((number ** 2) / 2)
 		const cardArray: React.ReactElement[] = []
 		for (let i = 0; i < assshitholefuck; i++) {
@@ -20,25 +25,24 @@ export const PlayingField: React.FC = () => {
 
 	useEffect(() => {
 		cardArrayCreator(size)
-		console.log("re-render")
 	}, [size])
 
 
 	return (
 		<>
-			<div className={`bg-blue-500 flex flex-wrap w-1/3 h-3/4 p-2 rounded`}>
-				<div className={`bg-blue-200 flex flex-wrap  w-full h-5/6 p-2 rounded`}>
-				{
-					cardArray.map((card) => {
-						return (
-							<div className={`h-1/${size} w-1/${size} flex items-center justify-center`}>
-								{card}
-							</div>
-						)
-					})
-				}
+			<div className={style.gameWrapper}>
+				<div className={style.playingField}>
+					{
+						cardArray.map((card) => {
+							return (
+								<div className={style.cardContainer} style={{height: cardHeight, width: cardWidth}}>
+									{card}
+								</div>
+							)
+						})
+					}
 				</div>
-				<DifficultyPicker setSize={ setSize } />
+				<DifficultyPicker setSize={setSize} />
 			</div>
 		</>
 	)

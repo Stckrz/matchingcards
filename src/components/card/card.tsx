@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
+import style from './card.module.css';
 
 interface PlayingCardProps {
 	size: number,
 	icon: React.ReactElement
 }
-export const PlayingCard: React.FC<PlayingCardProps> = ({ size, icon }) => {
+export const PlayingCard: React.FC<PlayingCardProps> = ({ icon }) => {
 	const [isFlipped, setIsFlipped] = useState(false)
 
 	return (
 		<>
-			<div className={`rounded w-4/6 h-5/6`}>
+			<div className={style.cardWrapper}>
 				{!isFlipped
 					? <div
-						className={`rounded h-full bg-black text-white`}
+						className={style.cardBack}
 						onClick={() => { setIsFlipped(!isFlipped) }}>
 					</div>
 					: <div
-						className={`rounded h-full bg-sky-950 text-white text-5xl flex items-center justify-center`}
+						className={style.cardFront}
 						onClick={() => { setIsFlipped(!isFlipped) }}>{icon}
 					</div>
 				}

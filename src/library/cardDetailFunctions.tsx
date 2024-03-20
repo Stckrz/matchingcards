@@ -24,38 +24,15 @@ export function arrayShuffle(array: any[]){
 }
 
 export const iconArray = [
-	{
-		icon: < FaSpaceAwesome />, 
-	},
-	{
-		icon: < GiSentryGun /> 
-	},
-	{
-		icon: < GiBoltBomb /> 
-	},
-	{
-		icon: < GiCash /> 
-	},
-	{
-		icon: < GiChewedHeart /> 
-	},
-	{
-		icon: < GiDonut /> 
-	},
-	{
-		icon: < GiFireFlower /> 
-	},
-	{
-		icon: < GiFirstAidKit /> 
-	},
-	{
-		icon: < GiMuscleUp /> },
-	{
-		icon: < GiMushroomCloud /> },
-	{
-		icon: < GiLaserGun /> },
-	{
-		icon: < GiSecretBook /> },
+		< FaSpaceAwesome />, 
+		< GiSentryGun />,
+		< GiBoltBomb />,
+		< GiCash />,
+		< GiChewedHeart />,
+		< GiDonut />,
+		< GiFireFlower />,
+		< GiFirstAidKit />,
+		< GiMuscleUp />,
+		< GiLaserGun />,
+		< GiSecretBook /> 
 ]
-
-arrayShuffle(iconArray)

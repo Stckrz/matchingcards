@@ -1,0 +1,22 @@
+.difficultyWrapper{
+	height: 10%;
+	width: 50%;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	justify-content: space-evenly;
+	align-self: flex-start;
+	background-color: #7287fd;
+	border-radius: 1em;
+	
+}
+
+.difficultyButton{
+	background-color: #8839ef;
+	height: 80%;
+	aspect-ratio: 1/1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 100%;
+}
