@@ -1,5 +1,6 @@
-import React from 'react'
 export interface CardInterface {
+	isFlipped: boolean
+	icon: React.ReactElement,
 	name: string,
-	icon: React.ReactElement
+	cardId: number,
 }
